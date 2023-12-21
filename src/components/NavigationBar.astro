@@ -1,0 +1,72 @@
+---
+
+---
+<nav class="flex justify-between items-center w-full h-min-30 md:h-30  py-4 bg-gray-200 shadow-md sticky top-0 z-50">
+  <!-- Logo -->
+  <div class=" flex justify-center items-center lg:ml-60 md:ml-28 sm:ml-10">
+    <img src="logo.png" alt="Logotipo" class="w-32 h-10 ">
+  </div>
+  <!-- Desktop menu -->
+  <div class="flex justify-center items-center hidden md:flex  lg:-ml-60 md:-ml-28 sm:-ml-10">
+    <a href="/" class="px-2 text-lg font-bold hover:text-gray-700">Inicio</a>
+    <a href="/about" class="px-2 text-lg font-bold hover:text-gray-700">Nosotros</a>
+    <a href="/productos" class="px-2 text-lg font-bold hover:text-gray-700">Productos</a>
+    <a href="/contacto" class="px-2 text-lg font-bold hover:text-gray-700">Contacto</a>
+  </div>
+  <!-- otros -->
+  <div class="flex hidden md:flex flex-col items-center ">
+    <a href="#" class="px-2 text-lg font-bold hover:text-gray-700">Idioma</a>
+    <a href="#" class="px-2 text-lg font-bold hover:text-gray-700">Modo Oscuro</a>
+  </div>
+  <!-- Mobile menu button -->
+  <button id="menu-toggle" class="absolute md:hidden right-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="gap-8 hidden md:hidden absolute top-0 right-0 bottom-0 h-full grid justify-center items-center rounded-lg ">
+    <a href="/" class="text-lg font-bold py-2 block hover:text-gray-700">Inicio</a>
+    <a href="/about" class="px-2 text-lg font-bold hover:text-gray-700">Nosotros</a>
+    <a href="/productos" class="px-2 text-lg font-bold hover:text-gray-700">Productos</a>
+    <a href="/contacto" class="px-2 text-lg font-bold hover:text-gray-700">Contacto</a>
+    <a href="#" class="text-lg font-bold py-2 block hover:text-gray-700">Idioma</a>
+    <a href="#" class="text-lg font-bold py-2 block hover:text-gray-700">Modo oscuro</a>
+    <div class="py-5 absolute top-0 right-5">
+      <button id="close-menu" class="text-lg font-bold hover:text-gray-700">X</button>
+    </div>
+  </div>
+</nav>
+
+
+
+<script>
+const toggleMenu = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
+
+if (toggleMenu && mobileMenu && closeMenu) {
+  toggleMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.style.width = `${window.innerWidth * 0.6}px`;
+    mobileMenu.style.right = '0px';
+    mobileMenu.style.backgroundColor = '#0100D3'; // Asegurarse de que el fondo se mantiene
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+}
+</script>
+
+<style>
+  #mobile-menu {
+    text-color: white;
+    transition: all 0.5s ease;
+    height: fit-content;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+</style>
