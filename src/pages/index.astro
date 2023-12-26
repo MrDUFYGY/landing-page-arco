@@ -3,14 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Galeria from '../components/Galeria.astro';
 import Accesos from '../components/Accesos.astro';
-import Procesos from '../components/Procesos.astro';
+
 import Contacto from '../components/ContactoSeccion.astro';
 import Footer from '../components/FooterPrincipal.astro';
 import Map from '../components/Map.astro';
 import MyComponentSvelte from '../components/MyComponentSvelte.svelte';
 import Prueba from '../components/Prueba.astro';
-import ProcesosDos from '../components/ProcesosDos.astro';
-
+import Procesos from '../components/ProcesosDos.astro';
+import Separador from '../components/separadores/Separador.astro';
 
 ---
 
@@ -19,13 +19,17 @@ import ProcesosDos from '../components/ProcesosDos.astro';
 	<main>
 
 		<Header />
+		<Separador separador="Accesos" />
 		<Accesos />
+		<Separador separador="Galeria" />
 		<Galeria />
-		<ProcesosDos />
+		<Separador separador="Procesos" />
+		<Procesos />
+		<Separador separador="Contacto" />
 		<Contacto />
+		<Separador separador="Mapa" />
 		<Map />
 		<Footer />
-		<MyComponentSvelte client:load/>
 
 	</main>
 	 
